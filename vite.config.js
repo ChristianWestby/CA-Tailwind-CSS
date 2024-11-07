@@ -2,5 +2,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './',  // Gjør alle ressurser tilgjengelige som relative baner
+  server: {
+    port: 3000,  // eller et annet portnummer du ønsker
+  },
 });
