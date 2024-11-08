@@ -9,7 +9,7 @@
 </head>
 <body class="bg-briefing-room min-h-screen text-gray-100 flex">
   <!-- Sidebar -->
-  <aside class="bg-gray-800 w-64 p-6">
+  <aside class="bg-gray-800 w-64 p-6 hidden md:block" id="sidebar">
     <h2 class="text-xl font-semibold mb-6">Menu</h2>
     <nav class="space-y-4">
       <a href="/src/feed/index.html" class="block text-indigo-500 hover:text-indigo-300">Feed</a>
@@ -20,14 +20,15 @@
 
   <!-- Main Content -->
   <main class="flex-1 p-8">
-    <header class="flex items-center justify-between mb-8">
-      <h1 class="text-3xl font-semibold">Username</h1>
+    <header class="flex items-center justify-between mb-8 bg-black bg-opacity-50 p-4 rounded-lg shadow-lg">
+      <h1 class="text-3xl font-semibold">Username: Christian</h1>
+      <!-- Collapsible Sidebar Toggle for Mobile -->
       <button id="sidebarToggle" class="md:hidden text-gray-300 hover:text-white">☰</button>
     </header>
 
-    <!-- Profile Information -->
-    <section class="mb-8">
-      <img src="https://via.placeholder.com/100" alt="Profile Picture" class="w-24 h-24 rounded-full border-4 border-indigo-500">
+    <!-- Profile Information Section with Background Shadow -->
+    <section class="mb-8 bg-black bg-opacity-50 p-4 rounded-lg shadow-lg">
+      <img src="/src/assets/images/profileimage.jpeg" alt="Profile Picture" class="w-24 h-24 rounded-full border-4 border-indigo-500 mb-4 object-cover">
       <p class="text-gray-400">Agent of Intelligence</p>
       <div class="flex space-x-4 mt-2">
         <div>
@@ -42,31 +43,45 @@
       <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md mt-4">Follow</button>
     </section>
 
-    <!-- Posts List -->
-    <section>
+    <!-- Kart Image Section with Background Shadow -->
+    <section class="mb-8 bg-black bg-opacity-50 p-4 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">Mission Map</h2>
+      <img src="https://www.kartverket.no/globalassets/til-lands/70_100_s_400k_vestland.jpg?width=1023&height=384&mode=crop&scale=both&quality=75" 
+           alt="Kart over Vestland" 
+           class="w-full h-32 md:h-24 object-cover rounded-lg mb-4">
+    </section>
+
+    <!-- Posts List with Background Shadow -->
+    <section class="bg-black bg-opacity-50 p-4 rounded-lg shadow-lg">
       <h2 class="text-2xl font-bold mb-6">Posts</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <img src="https://via.placeholder.com/150" alt="Post Thumbnail" class="w-full h-32 object-cover rounded-lg mb-4">
+          <img src="/src/assets/images/image3.png" alt="Mission Update Image" class="w-full h-32 object-cover rounded-lg mb-4">
           <h3 class="text-xl font-semibold">Mission Update</h3>
           <p class="text-gray-400 text-sm mb-2">Updated 5 hours ago</p>
           <p class="text-gray-300">An overview of the latest intelligence operations.</p>
+          <!-- Back to Home Button -->
+          <button onclick="goToIndex()" class="mt-4 w-full py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md font-semibold">Back to Home</button>
         </div>
       </div>
     </section>
   </main>
 
   <script>
-    // Simple toggle for sidebar on mobile
+    // Toggle sidebar on mobile
     document.getElementById("sidebarToggle").onclick = () => {
-      document.querySelector("aside").classList.toggle("hidden");
+      document.getElementById("sidebar").classList.toggle("hidden");
     };
 
     // Logout function to navigate back to index.html
     function logout() {
       window.location.href = "/index.html";
     }
-  </script>
 
+    // Function for "Back to Home" button
+    function goToIndex() {
+      window.location.href = "/index.html";
+    }
+  </script>
 </body>
 </html>
