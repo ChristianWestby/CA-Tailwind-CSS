@@ -1,9 +1,5 @@
 # CA-Tailwind-CSS
-Okey...I need to make a Read me file for this task. I want to implement the main task brief and that i choose option nr 3. 
-CSS Frameworks – Course Assignment 
-
  
-
 Goal 
 
 To apply your knowledge of Tailwind or Bootstrap and SASS to build a responsive front end for a social media application. 
@@ -74,7 +70,9 @@ Review your peers’ PRs.
 
 Deploy your site on a service like Netlify or Github Pages. 
 
- 
+Option 3
+Important (as mentioned in class) there is an option 3: 
+Option 3 is that you can design your own website. It must be of similar scope to option 2 (three pages etc). Have fun with it and challenge yourself. It can be any website design.
 
 Delivery 
 
