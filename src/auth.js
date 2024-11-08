@@ -1,9 +1,13 @@
 // src/auth.js
 
-// Funksjon for å logge inn og navigere til feed-siden
- export function login() {
+// src/auth.js
+
+export function login() {
+    console.log("Login function called"); // Bekreftelse på at funksjonen blir kalt
     localStorage.setItem('authToken', 'dummyToken');
-    window.location.href = '/feed/index.html';
+    console.log("Token set in localStorage"); // Bekrefter at token er lagret
+    console.log("Attempting to navigate to /src/feed/index.html"); // Log før navigering
+    window.location.href = `${window.location.origin}/src/feed/index.html`;
   }
   
   // Funksjon for å sjekke autentisering

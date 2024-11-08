@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Operations Dashboard</title>
-  <script type="module">
-    import { checkAuth } from '/src/auth.js';
-    document.addEventListener('DOMContentLoaded', checkAuth);
+  // src/feed/index.html
+  <script>
+    if (!localStorage.getItem('authToken')) {
+      localStorage.setItem('authToken', 'dummyToken');
+    }
   </script>
 </head>
 <body class="bg-gray-900 min-h-screen p-10">
