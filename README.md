@@ -1,85 +1,77 @@
 # CA-Tailwind-CSS
- 
-Goal 
 
-To apply your knowledge of Tailwind or Bootstrap and SASS to build a responsive front end for a social media application. 
+Social Media App - CSS Frameworks Course Assignment
 
-Brief 
+Overview
 
-For this assignment you have two options: 
+This project is a course assignment for the CSS Frameworks module, with the goal of building a responsive front end for a social media application using Tailwind CSS. The focus is on applying CSS frameworks to develop a user-friendly, professional, and mobile-responsive application. I have chosen Option 3 for this assignment, creating a new social media app that includes an Authentication Page, Feed Page, and Profile Page.
 
-Option 1 
+Task Brief
 
-Style your JS2 CA with either Tailwind or Bootstrap and SASS. 
+Goal
 
-Work on a branch called css-frameworks branched off your JS2 CA branch. 
+The objective of this assignment is to apply knowledge of Tailwind, Bootstrap, or SASS to build a responsive front-end interface for a social media app.
 
-Ensure package.json includes a development script that uses tools like watch for real-time updates, and a deployment script for building the production-ready code. 
+Brief
 
-Deploy your site from the css-frameworks branch using a service like Netlify or Github Pages. 
+For this assignment, there were two options:
+	1.	Option 1: Style an existing JS2 CA project using Tailwind, Bootstrap, and SASS.
+	2.	Option 2 (Chosen): Create a new social media app with three main pages:
+	•	Authentication Page (/index.html): Includes a form for users to log in or register. The form is validated and redirects to /profile on successful login.
+	•	Feed Page (/feed/index.html): Displays a list of posts with thumbnails, a search bar, sort options, and a form for creating new posts.
+	•	Profile Page (/profile/index.html): Contains user profile information, including a profile image, username, posts, follow button, and follower/following count.
 
-Submit both a PR from your css-frameworks branch to the original branch and a link to the deployed site. 
+This project uses Tailwind CSS for all styling, focusing on responsive design and utilizing best practices in frontend development.
 
-Option 2 
+Requirements
 
-Create a new social media app with the following pages: 
+	•	Responsive Design: The site must be fully responsive.
+	•	Validation and User Experience: HTML form validation is implemented on the authentication page.
+	•	Structure:
+	•	Authentication Page: Form for login with a minimum password length of 8 characters.
+	•	Feed Page: Features post listings, a search bar, sort options, and a post creation form.
+	•	Profile Page: Displays user profile, including username, followers, following, and posts.
 
-Authentication page (/index.html) 
+Installation and Setup
 
-Feed Page (/feed/index.html) 
+	1.	Clone the repository:
 
-Profile page (/profile/index.html) 
+git clone [repository-url]
 
-The authentication page should include a form allowing users to log in or register for the application. Include HTML form validation and use /profile as the action attribute on the form. The password must have a minimum length of 8 characters. 
 
-The feed page should have a list of posts with thumbnails, a search bar, sort options and a form to create a new post. You may add additional UI elements beyond these requirements. 
+	2.	Install dependencies:
 
-The profile page should have a profile image, username, list of user posts, a follow button and an area to display following/followers. 
+npm install
 
-Style your new app with either Tailwind or Bootstrap and SASS. 
 
-There is no requirement for JS functionality beyond things like making sure the mobile menu works.  
+	3.	Run development server with real-time updates:
 
-Create a new repo and perform all your work on a branch called css-frameworks.  
+npm run dev
 
-Ensure package.json includes a development script that uses tools like watch for real-time updates, and a deployment script for building the production-ready code. 
 
-Deploy your site from the css-frameworks branch using a service like Netlify or Github Pages. 
+	4.	Build the production-ready code:
 
-Submit both a PR from your css-frameworks branch to the original branch and a link to the deployed site. 
+npm run build
 
-Process 
 
-Create a prototype for each page. 
 
-Create a new git branch for this project called css-frameworks. 
+Deployment
 
-Install any required NPM packages. 
+The project is deployed via Netlify or GitHub Pages from the css-frameworks branch.
 
-Complete any required configuration. 
+Process
 
-Add relevant scripts in package.json 
+	1.	Created prototypes for each page.
+	2.	Initialized a new branch, css-frameworks.
+	3.	Installed necessary NPM packages and configured package.json.
+	4.	Styled all pages using Tailwind CSS, ensuring a responsive UI.
+	5.	Created a Pull Request, requested peer reviews, and implemented feedback.
+	6.	Reviewed peer submissions.
+	7.	Deployed the application and ensured its accessibility.
 
-Implement responsive UI with the chosen library. 
+Deliverables
 
-Create and share a Pull Request and request peer reviews on Teams. 
+	•	Pull Request: Open PR available here.
+	•	Deployed Site: Access the live site here.
 
-Implement any suggestions. You can commit to the same PR. 
-
-Review your peers’ PRs. 
-
-Deploy your site on a service like Netlify or Github Pages. 
-
-Option 3
-Important (as mentioned in class) there is an option 3: 
-Option 3 is that you can design your own website. It must be of similar scope to option 2 (three pages etc). Have fun with it and challenge yourself. It can be any website design.
-
-Delivery 
-
-Submit a link to your open PR and a link to the deployed site. If you are creating a new repo please make sure it is public. 
-
-Be sure to exclude node_modules in a .gitignore file. 
-
- 
-
- 
+Let me know if you’d like any additional details or customizations! This README file presents your choices, outlines the assignment requirements, and provides links to deployment and the pull request.
