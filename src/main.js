@@ -1,7 +1,5 @@
 import './styles/main.scss';
 
-import { login } from './auth';
-
 document.addEventListener('DOMContentLoaded', () => {
   console.log("DOMContentLoaded fired"); // Bekrefter at DOM er lastet
   const loginForm = document.getElementById('loginForm');
