@@ -4,53 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Operations Dashboard</title>
+  <link rel="stylesheet" href="../styles/main.css">
   <script type="module" src="/src/main.js"></script>
 </head>
-<body class="bg-gray-900 min-h-screen text-gray-100 p-8">
-  
-  <!-- Header -->
-  <header class="mb-8">
-    <h1 class="text-4xl font-bold">Operations Dashboard</h1>
-    <p class="text-gray-400">Manage and monitor activities in real-time</p>
-  </header>
+<body class="bg-briefing-room min-h-screen text-gray-100 flex">
+  <!-- Sidebar -->
+  <aside class="bg-gray-800 w-64 p-6">
+    <h2 class="text-xl font-semibold mb-6">Menu</h2>
+    <nav class="space-y-4">
+      <a href="/src/feed/index.html" class="block text-indigo-500 hover:text-indigo-300">Feed</a>
+      <a href="/src/profile/index.html" class="block text-gray-300 hover:text-gray-100">Profile</a>
+      <button onclick="logout()" class="block text-red-500 hover:text-red-300">Logout</button>
+    </nav>
+  </aside>
+  <!-- Resten av innholdet -->
+</body>
 
-  <!-- Search and Sort Section -->
-  <section class="flex items-center justify-between mb-8">
-    <!-- Search Bar -->
-    <div class="relative">
-      <input type="text" placeholder="Search posts" class="w-64 px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <span class="absolute right-2 top-2.5 text-gray-500">🔍</span>
-    </div>
-    <!-- Sort Dropdown -->
-    <div>
-      <select class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        <option>Sort by Date</option>
-        <option>Sort by Popularity</option>
-      </select>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <main class="flex-1 p-8">
+    <header class="flex items-center justify-between mb-8">
+      <h1 class="text-4xl font-bold">Operations Dashboard</h1>
+      <!-- Collapsible Sidebar Toggle for Mobile -->
+      <button id="sidebarToggle" class="md:hidden text-gray-300 hover:text-white">☰</button>
+    </header>
 
-  <!-- Posts List -->
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Example Post Card -->
-    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-      <img src="https://via.placeholder.com/150" alt="Post Thumbnail" class="w-full h-32 object-cover rounded-lg mb-4">
-      <h3 class="text-xl font-semibold">Mission Briefing</h3>
-      <p class="text-gray-400 text-sm mb-2">Updated 2 hours ago</p>
-      <p class="text-gray-300">A brief overview of recent mission activities and strategic updates.</p>
-    </div>
-    <!-- Additional post cards as needed -->
-  </section>
+    <!-- Search and Sort Section -->
+    <section class="flex items-center justify-between mb-8">
+      <div class="relative">
+        <input type="text" placeholder="Search posts" class="w-64 px-4 py-2 bg-gray-800 border border-gray-700 rounded-md">
+        <span class="absolute right-2 top-2.5 text-gray-500">🔍</span>
+      </div>
+      <div>
+        <select class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-md">
+          <option>Sort by Date</option>
+          <option>Sort by Popularity</option>
+        </select>
+      </div>
+    </section>
 
-  <!-- New Post Form -->
-  <section class="mt-10">
-    <h2 class="text-2xl font-bold mb-4">Create New Post</h2>
-    <form class="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
-      <input type="text" placeholder="Title" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <textarea placeholder="Write your post here..." class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-      <button type="submit" class="w-full py-2 bg-indigo-600 hover:bg-indigo-700 rounded-md text-white font-semibold">Publish Post</button>
-    </form>
-  </section>
+    <!-- Posts List -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Example Post Card -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <img src="https://via.placeholder.com/150" alt="Post Thumbnail" class="w-full h-32 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold">Mission Briefing</h3>
+        <p class="text-gray-400 text-sm mb-2">Updated 2 hours ago</p>
+        <p class="text-gray-300">A brief overview of recent mission activities and strategic updates.</p>
+      </div>
+    </section>
+
+    <!-- New Post Form -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-bold mb-4">Create New Post</h2>
+      <form class="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
+        <!-- Kartbilde lagt inn i form -->
+        <img src="https://www.kartverket.no/globalassets/til-lands/70_100_s_400k_vestland.jpg?width=1023&height=384&mode=crop&scale=both&quality=75" 
+             alt="Kart over Vestland" 
+             class="w-full h-48 object-cover rounded-lg mb-4">
+        
+        <input type="text" placeholder="Title" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md">
+        <textarea placeholder="Write your post here..." class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md"></textarea>
+        <button type="button" onclick="navigateToProfile()" class="w-full py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md font-semibold">Publish Post</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    // Simple toggle for sidebar on mobile
+    document.getElementById("sidebarToggle").onclick = () => {
+      document.querySelector("aside").classList.toggle("hidden");
+    };
+
+    function navigateToProfile() {
+      window.location.href = "/src/profile/index.html";
+    }
+  </script>
 
 </body>
 </html>

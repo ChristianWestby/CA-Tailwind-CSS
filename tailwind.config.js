@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,html}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'briefing-room': "url('/src/assets/images/image.png')",
+      },
+    },
   },
   plugins: [],
 };

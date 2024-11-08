@@ -4,17 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Profile</title>
-   
+  <link rel="stylesheet" href="../styles/main.css">
   <script type="module" src="/src/main.js"></script>
- 
 </head>
-<body class="bg-gray-900 min-h-screen text-gray-100 p-8">
+<body class="bg-briefing-room min-h-screen text-gray-100 flex">
+  <!-- Sidebar -->
+  <aside class="bg-gray-800 w-64 p-6">
+    <h2 class="text-xl font-semibold mb-6">Menu</h2>
+    <nav class="space-y-4">
+      <a href="/src/feed/index.html" class="block text-indigo-500 hover:text-indigo-300">Feed</a>
+      <a href="/src/profile/index.html" class="block text-gray-300 hover:text-gray-100">Profile</a>
+      <button onclick="logout()" class="block text-red-500 hover:text-red-300">Logout</button>
+    </nav>
+  </aside>
+  <!-- Resten av innholdet -->
+</body>
 
-  <!-- Profile Header -->
-  <header class="flex items-center mb-8 space-x-6">
-    <img src="https://via.placeholder.com/100" alt="Profile Picture" class="w-24 h-24 rounded-full border-4 border-indigo-500">
-    <div>
+  <!-- Main Content -->
+  <main class="flex-1 p-8">
+    <header class="flex items-center justify-between mb-8">
       <h1 class="text-3xl font-semibold">Username</h1>
+      <button id="sidebarToggle" class="md:hidden text-gray-300 hover:text-white">☰</button>
+    </header>
+
+    <!-- Profile Information -->
+    <section class="mb-8">
+      <img src="https://via.placeholder.com/100" alt="Profile Picture" class="w-24 h-24 rounded-full border-4 border-indigo-500">
       <p class="text-gray-400">Agent of Intelligence</p>
       <div class="flex space-x-4 mt-2">
         <div>
@@ -26,28 +41,29 @@
           <span class="text-gray-400 text-sm">Following</span>
         </div>
       </div>
-    </div>
-  </header>
+      <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md mt-4">Follow</button>
+    </section>
 
-  <!-- Follow Button -->
-  <div class="mb-8">
-    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md">Follow</button>
-  </div>
-
-  <!-- User Posts Section -->
-  <section>
-    <h2 class="text-2xl font-bold mb-6">Posts</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Example Post Card -->
-      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-        <img src="https://via.placeholder.com/150" alt="Post Thumbnail" class="w-full h-32 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold">Mission Update</h3>
-        <p class="text-gray-400 text-sm mb-2">Updated 5 hours ago</p>
-        <p class="text-gray-300">An overview of the latest intelligence operations.</p>
+    <!-- Posts List -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6">Posts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <img src="https://via.placeholder.com/150" alt="Post Thumbnail" class="w-full h-32 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold">Mission Update</h3>
+          <p class="text-gray-400 text-sm mb-2">Updated 5 hours ago</p>
+          <p class="text-gray-300">An overview of the latest intelligence operations.</p>
+        </div>
       </div>
-      <!-- Duplicate or additional post cards as needed -->
-    </div>
-  </section>
+    </section>
+  </main>
+
+  <script>
+    // Simple toggle for sidebar on mobile
+    document.getElementById("sidebarToggle").onclick = () => {
+      document.querySelector("aside").classList.toggle("hidden");
+    };
+  </script>
 
 </body>
 </html>
