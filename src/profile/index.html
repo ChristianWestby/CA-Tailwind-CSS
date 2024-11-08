@@ -4,13 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Profile</title>
-  <link rel="stylesheet" href="../styles/main.css">
+   
+  <script type="module" src="/src/main.js"></script>
+ 
 </head>
 <body class="bg-gray-900 min-h-screen text-gray-100 p-8">
-  <header class="mb-8">
-    <h1 class="text-4xl font-bold">User Profile</h1>
-    <p class="text-gray-400">Overview of user details and activity</p>
+
+  <!-- Profile Header -->
+  <header class="flex items-center mb-8 space-x-6">
+    <img src="https://via.placeholder.com/100" alt="Profile Picture" class="w-24 h-24 rounded-full border-4 border-indigo-500">
+    <div>
+      <h1 class="text-3xl font-semibold">Username</h1>
+      <p class="text-gray-400">Agent of Intelligence</p>
+      <div class="flex space-x-4 mt-2">
+        <div>
+          <span class="text-lg font-semibold">150</span>
+          <span class="text-gray-400 text-sm">Followers</span>
+        </div>
+        <div>
+          <span class="text-lg font-semibold">200</span>
+          <span class="text-gray-400 text-sm">Following</span>
+        </div>
+      </div>
+    </div>
   </header>
-  <!-- Innhold for profilen, f.eks. brukerinnlegg og følgere -->
+
+  <!-- Follow Button -->
+  <div class="mb-8">
+    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md">Follow</button>
+  </div>
+
+  <!-- User Posts Section -->
+  <section>
+    <h2 class="text-2xl font-bold mb-6">Posts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Example Post Card -->
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <img src="https://via.placeholder.com/150" alt="Post Thumbnail" class="w-full h-32 object-cover rounded-lg mb-4">
+        <h3 class="text-xl font-semibold">Mission Update</h3>
+        <p class="text-gray-400 text-sm mb-2">Updated 5 hours ago</p>
+        <p class="text-gray-300">An overview of the latest intelligence operations.</p>
+      </div>
+      <!-- Duplicate or additional post cards as needed -->
+    </div>
+  </section>
+
 </body>
 </html>
