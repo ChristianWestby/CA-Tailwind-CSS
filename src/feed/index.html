@@ -17,8 +17,6 @@
       <button onclick="logout()" class="block text-red-500 hover:text-red-300">Logout</button>
     </nav>
   </aside>
-  <!-- Resten av innholdet -->
-</body>
 
   <!-- Main Content -->
   <main class="flex-1 p-8">
@@ -75,8 +73,14 @@
       document.querySelector("aside").classList.toggle("hidden");
     };
 
+    // Navigate to profile page
     function navigateToProfile() {
       window.location.href = "/src/profile/index.html";
+    }
+
+    // Logout function to navigate back to index.html
+    function logout() {
+      window.location.href = "/index.html";
     }
   </script>
 
