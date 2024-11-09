@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import { copyFileSync, existsSync } from 'fs';
+import fs from 'fs';
 
 export default defineConfig({
   base: '',
@@ -9,25 +9,24 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        feed: resolve(__dirname, 'src/feed/index.html'),
+        profile: resolve(__dirname, 'src/profile/index.html'),
       },
     },
   },
   plugins: [
     {
       name: 'copy-redirects',
-      buildEnd() {
-        const redirectsPath = resolve(__dirname, '_redirects');  // Use absolute path
-        if (existsSync(redirectsPath)) {
-          try {
-            console.log(`Copying _redirects from ${redirectsPath} to dist/_redirects`);
-            copyFileSync(redirectsPath, resolve(__dirname, 'dist/_redirects'));
-          } catch (error) {
-            console.error(`Failed to copy _redirects: ${error.message}`);
-          }
+      closeBundle() {
+        const redirectsSrc = resolve(__dirname, '_redirects');
+        const redirectsDest = resolve(__dirname, 'dist/_redirects');
+        if (fs.existsSync(redirectsSrc)) {
+          fs.copyFileSync(redirectsSrc, redirectsDest);
+          console.log('_redirects file copied to dist folder');
         } else {
-          console.warn('Warning: _redirects file not found at expected path.');
+          console.warn('_redirects file not found at expected path.');
         }
-      }
-    }
-  ]
+      },
+    },
+  ],
 });
