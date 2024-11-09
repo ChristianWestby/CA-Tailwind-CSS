@@ -74,4 +74,3 @@ Deliverables
 	•	Pull Request: Open PR available here.
 	•	Deployed Site: Access the live site here.
 
-Let me know if you’d like any additional details or customizations! This README file presents your choices, outlines the assignment requirements, and provides links to deployment and the pull request.
